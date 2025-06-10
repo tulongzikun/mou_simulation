@@ -1,4 +1,4 @@
-from skill import Skill, SkillType
+from skill import Skill, SkillType, SKILL_DICT
 import csv
 
 class General:
@@ -23,7 +23,7 @@ class General:
         self.level = 50 # 初始等级（可根据实际情况调整）
         
         # 存储技能/战法ID（实际对象通过load_data关联）
-        self.skills = [skill]
+        self.skill = SKILL_DICT[skill]
 
     @property
     def strength(self) -> float:
