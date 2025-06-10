@@ -7,9 +7,10 @@ class General:
                  intelligence: float, intelligence_growth: float,
                  leadership: float, leadership_growth: float,
                  agility: float, agility_growth: float,
-                 skill: str):
+                 skill: str, type: str):
         self.id = 0
         self.name = name
+        self.type = type
         self.force = force  # 势力（魏/蜀/吴）
         self._strength = float(strength)  # 武力 → 影响兵刃伤害
         self._strength_growth = float(strength_growth)
@@ -56,4 +57,6 @@ def read_from_file(path="./data/general.txt"):
             GENERAL_DICT[row[0]] = General(*row)
 
 read_from_file()
-print(GENERAL_DICT)
+
+if __name__ == "__main__":
+    print(GENERAL_DICT)
